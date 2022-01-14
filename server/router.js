@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const itemController = require('./controllers/item');
-const upload = require('./middlewares/upload');
+const upload = require('./controllers/photos');
 
 const router = new Router();
 

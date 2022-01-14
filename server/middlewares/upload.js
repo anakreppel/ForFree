@@ -4,7 +4,7 @@ const multer = require('multer');
 const maxSize = 2 * 1024 * 1024;
 const path = __dirname + '/../public/images'
 
-let storage = multer.diskStorage({
+const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path);
   },
@@ -14,12 +14,20 @@ let storage = multer.diskStorage({
   }
 })
 
-let uploadFile = multer({
+const uploadFile = multer({
   storage: storage,
-  limits: { fileSize: maxSize }
+  limits: { fileSize: maxSize },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
+      cb(null, true);
+    } else {
+      cb(null, false);
+      return cb(new Error('only .png, .jpg and .jpeg format allowed!'))
+    }
+  }
 }).single("img");
 
 
-let photos = util.promisify(uploadFile);
+const photos = util.promisify(uploadFile);
 
 module.exports = photos
