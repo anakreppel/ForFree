@@ -15,8 +15,15 @@ const getItems = async (req, res) => {
 const postItem = async (req, res) => {
   try {
     const item = req.body;
+    const extension = item.image;
+    item.image = " ";
+    console.log('image', item.image);
     const savedItem = await Item.create(item);
-    res.send(savedItem);
+    const img = `${__dirname}/../public/images/` + savedItem._id + '.' + extension;
+    console.log('img', img);
+    const updatedItem = await Item.findByIdAndUpdate(savedItem._id, { image: `${img}` }, { new: true });
+    console.log('update', updatedItem);
+    res.send(updatedItem);
     res.status(201);
   } catch (e) {
     console.log(e);

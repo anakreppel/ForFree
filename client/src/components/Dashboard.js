@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Form from './Form';
 
 
-export default function Dashboard ({ uploadImg }) {
+export default function Dashboard ({ postItem }) {
 
   return (
     <div>
-      <Form uploadImg={uploadImg} />
+      <Form postItem={postItem} />
     </div>
   )
 }

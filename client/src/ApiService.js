@@ -14,16 +14,20 @@ function getItems () {
 }
 
 function postItem (body) {
-  return axios.requests('/item', {
+  return requests('/item', {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
   });
 }
 
-async function uploadImg (file) {
+async function uploadImg (file, filename) {
+  console.log('filename', filename);
   const formData = new FormData();
-  formData.append('img', file);
+  const fileName = filename + '.' + file.name.split('.').slice(-1)[0];
+  console.log('fileName', fileName);
+  console.log('file', file.name);
+  formData.append('img', file, fileName);
   try {
     const res = await axios.post('http://localhost:5000/item/upload', formData);
     return res.data;
