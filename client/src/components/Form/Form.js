@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 
-const Form = ({ postItem }) => {
+export default function Form ({ postItem }) {
   const [img, setImg] = useState(null);
   const ref = React.useRef();
   const [name, setName] = useState('');
@@ -62,7 +62,7 @@ const Form = ({ postItem }) => {
         </div>
         <div>
           <label>location</label>
-          <input type='text' placeholder='e.g Charlotenburg - 10587'
+          <input type='text' placeholder='e.g Charlottenburg - 10587'
             value={location}
             onChange={locationHandler}
           />
@@ -80,5 +80,3 @@ const Form = ({ postItem }) => {
     </div>
   )
 }
-
-export default Form

@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import ApiService from './ApiService';
 import { useState, useEffect } from 'react';
 
@@ -30,7 +31,9 @@ function App () {
   }
 
   return (
-    <Dashboard postItem={postItem} />
+    <div>
+      <Dashboard postItem={postItem} />
+    </div>
   );
 }
 
