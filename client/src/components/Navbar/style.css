@@ -1,0 +1,82 @@
+nav{
+  background: #F1F1F1;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  z-index: 99;
+}
+
+h1{
+  font-family: "Segoe Script";
+  font-size: 30px ;
+}
+
+.free{
+  color: #518FD8;
+}
+
+.for{
+  color: #F9F9F9;
+}
+
+.menu .dec a{
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+}
+
+.blue{
+  width: 73px;
+  height: 50px;
+  background: #518FD8;
+  border-radius: 8px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.nude{
+  width: 73px;
+  height: 50px;
+  background: #F1F1F1;
+  border-radius: 8px;
+  text-align: left;
+  padding: 1px;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px;
+}
+
+.link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon{
+  width: 100px;
+  height: 50px;
+  background: #518FD8;
+  border-radius: 8px;
+  margin: 4px;
+  color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon:hover{
+  background-color: #F1F1F1;
+  border: 1px solid #518FD8;
+  color: #518FD8;
+  transition: all 0.5s ease-in-out;
+}
