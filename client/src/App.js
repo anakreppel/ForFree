@@ -1,8 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import ApiService from './ApiService';
 import { useState, useEffect } from 'react';
+import Form from './components/Form/Form'
+import MyItems from './components//MyItems/MyItems'
+import Navbar from './components//Navbar/Navbar';
 
 function App () {
   const [items, setItems] = useState([]);
@@ -32,7 +36,14 @@ function App () {
 
   return (
     <div>
-      <Dashboard postItem={postItem} />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/items' element={<MyItems />} />
+          <Route path='/items/upload' element={<Form postItem={postItem} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

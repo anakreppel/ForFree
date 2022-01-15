@@ -1,7 +1,7 @@
 export const Menu = [
   {
     title: "home",
-    url: "/"
+    url: '/'
   },
   {
     title: "My Items",

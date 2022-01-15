@@ -5,18 +5,11 @@ import MyItems from '../MyItems/MyItems'
 import Navbar from '../Navbar/Navbar';
 
 
-export default function Dashboard ({ postItem }) {
+export default function Dashboard () {
 
   return (
     <div>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Dashboard />} />
-          <Route path='/items' element={<MyItems />} />
-          <Route path='/items/upload' element={<Form postItem={postItem} />} />
-        </Routes>
-      </Router>
+
     </div>
   )
 }
