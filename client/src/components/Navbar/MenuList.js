@@ -9,6 +9,10 @@ export const Menu = [
   },
   {
     title: "New Item",
-    url: "/items/upload"
+    url: "/item/upload"
+  },
+  {
+    title: "Detail",
+    url: "/item/"
   }
 ];

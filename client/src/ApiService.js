@@ -13,6 +13,10 @@ function getItems () {
   return requests('/item');
 }
 
+function getOneItem (id) {
+  return requests(`/item/${id}`, { method: 'GET' });
+}
+
 function postItem (body) {
   return requests('/item', {
     method: 'POST',
@@ -37,6 +41,6 @@ async function uploadImg (file, filename) {
 }
 
 
-const ApiService = { getItems, postItem, uploadImg };
+const ApiService = { getItems, getOneItem, postItem, uploadImg };
 
 export default ApiService;

@@ -4,13 +4,14 @@ import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import ApiService from './ApiService';
 import { useState, useEffect } from 'react';
-import Form from './components/Form/Form'
-import MyItems from './components//MyItems/MyItems'
+import Form from './components/Form/Form';
+import MyItems from './components//MyItems/MyItems';
+import Detail from './components/Detail/Detail';
 import Navbar from './components//Navbar/Navbar';
 
 function App () {
   const [items, setItems] = useState([]);
-  const [images, setImages] = useState([]);
+  //const [item, setItem] = useState({});
 
   useEffect(() => {
     ApiService.getItems().then(data => setItems(data));
@@ -19,6 +20,14 @@ function App () {
   /* function uploadImg (file) {
     ApiService.uploadImg(file)
       .then(data => setImages(prev => prev.concat(data)));
+  } */
+  /* async function getItem (id) {
+    try {
+      const item = await ApiService.getOneItem(id);
+      return item;
+    } catch (e) {
+      console.log(e);
+    }
   } */
 
   function postItem (name, location, description, image, img) {
@@ -41,7 +50,8 @@ function App () {
         <Routes>
           <Route path='/' element={<Dashboard items={items} />} />
           <Route path='/items' element={<MyItems />} />
-          <Route path='/items/upload' element={<Form postItem={postItem} />} />
+          <Route path='/item/upload' element={<Form postItem={postItem} />} />
+          <Route path='/item/:id' element={<Detail />} />
         </Routes>
       </Router>
     </div>
