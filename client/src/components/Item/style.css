@@ -1,0 +1,40 @@
+.outside{
+  width: 246px;
+  height: 257px;
+}
+.item-content{
+  width: 211px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #FCFCFC;
+  box-shadow: 0 0 0 1px 5px #aca7a7;
+  border-radius: 8px;
+  margin: 4px;
+}
+.image{
+  width: 211px;
+  height: 140px;
+  background-image: url('../../../public/img.jpeg');
+  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+}
+.info{
+  width: 211px;
+  height: 60px;
+  border-top: 1px solid #518FD8;
+}
+
+h4{
+  font-family: "SF Pro Display";
+  font-size: small;
+  text-align: left;
+}
+p{
+  font-family: "SF Pro Display";
+  font-size: x-small;
+  text-align: right;
+}

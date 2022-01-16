@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Form from '../Form/Form'
-import MyItems from '../MyItems/MyItems'
-import Navbar from '../Navbar/Navbar';
+import React from 'react';
+import Item from '../Item/Item';
+import './style.css';
 
 
-export default function Dashboard () {
+export default function Dashboard ({ items }) {
+  const itemList = [...items];
+  console.log('itemList', itemList);
 
   return (
-    <div>
-
+    <div className='items-content'>
+      <div className='item-list'>
+        {itemList.map((item, i) => <Item key={i} item={item} />)}
+      </div>
     </div>
   )
 }

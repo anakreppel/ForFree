@@ -39,7 +39,7 @@ function App () {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Dashboard />} />
+          <Route path='/' element={<Dashboard items={items} />} />
           <Route path='/items' element={<MyItems />} />
           <Route path='/items/upload' element={<Form postItem={postItem} />} />
         </Routes>
