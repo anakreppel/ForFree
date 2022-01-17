@@ -1,6 +1,6 @@
-export const addItems = (items) => ({
+export const addItems = (itemList) => ({
   type: 'ADD_ITEMS',
-  items: items
+  itemList: itemList
 });
 
 export const addItem = (item) => ({
@@ -8,7 +8,13 @@ export const addItem = (item) => ({
   item: item
 });
 
-export const filterItems = (item) => ({
-  type: 'FILTER_ITEMS_LIST',
+export const savedItem = (item) => ({
+  type: 'SAVE_ITEM',
   item: item
 });
+
+export const deleteItem = (item) => ({
+  type: 'REMOVE_ITEM',
+  item: item
+});
+

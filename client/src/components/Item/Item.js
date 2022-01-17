@@ -3,6 +3,7 @@ import './style.css';
 import { Menu } from '../Navbar/MenuList';
 
 
+
 export default function Item ({ item }) {
   const list = [...Menu];
   const ref = list[3].url + item._id;
@@ -17,7 +18,7 @@ export default function Item ({ item }) {
           <h4>{item.name}</h4>
           <p className='location' >{item.location}</p>
           <div className='descripiton'>
-            <a href={ref} >Detail</a>
+            <a href={ref} >Detail </a>
           </div>
         </div>
       </div>
