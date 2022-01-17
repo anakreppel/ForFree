@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-const items_reducer = (state, action) => {
+const items_reducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_ITEMS': {
       const { items } = action;
-      return items.concat(state);
+      return [...items];
     }
     case 'ADD_ITEM': {
       const { item } = action;

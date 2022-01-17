@@ -1,4 +1,3 @@
-
 export const addItems = (items) => ({
   type: 'ADD_ITEMS',
   items: items
