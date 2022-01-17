@@ -6,6 +6,7 @@ import { Menu } from '../Navbar/MenuList';
 export default function Item ({ item }) {
   const list = [...Menu];
   const ref = list[3].url + item._id;
+
   return (
     <div className='outside'>
       <div className='item-content'>

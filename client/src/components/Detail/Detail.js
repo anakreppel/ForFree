@@ -1,14 +1,14 @@
 import React from 'react'
-/* import { useParams } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development'; */
+import { useParams } from 'react-router-dom';
+
+
 import './style.css';
 
-export default function Detail () {
-  /*  const [detail, setDetail] = useState({})
-   const { id } = useParams(); */
+export default function Detail ({ items }) {
+  const { id } = useParams();
 
   return (
-    <div>
+    <div >{id}
     </div>
   )
 }

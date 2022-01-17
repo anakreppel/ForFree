@@ -11,16 +11,12 @@ import Navbar from './components//Navbar/Navbar';
 
 function App () {
   const [items, setItems] = useState([]);
-  //const [item, setItem] = useState({});
 
   useEffect(() => {
     ApiService.getItems().then(data => setItems(data));
   }, [])
 
-  /* function uploadImg (file) {
-    ApiService.uploadImg(file)
-      .then(data => setImages(prev => prev.concat(data)));
-  } */
+
   /* async function getItem (id) {
     try {
       const item = await ApiService.getOneItem(id);
