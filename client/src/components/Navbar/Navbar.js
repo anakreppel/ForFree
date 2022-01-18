@@ -17,6 +17,14 @@ export default function Navbar () {
           <h1 className='free'>Free</h1>
         </div>
       </div>
+      <div className='search-bar'>
+        <input className='input-search' placeholder='Search' type='text' />
+        <div className='icon i-serach'>
+          <div className='title'>
+            <p>Search</p>
+          </div>
+        </div>
+      </div>
       <div className='menu'>
         <div className='home dec'>
           <Link to={`${list[0].url}`}>

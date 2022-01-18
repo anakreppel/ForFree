@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ForFree",
+  "name": "ForFree",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,10 @@
     {
       "src": "img.jpeg",
       "type": "image/jpeg"
+    },
+    {
+      "src": "empty.png",
+      "type": "image/png"
     }
   ],
   "start_url": ".",

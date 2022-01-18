@@ -1,7 +1,8 @@
 import React from 'react';
-import { Menu } from '../../MenuList';
 import './style.css';
 import { useState } from 'react';
+
+
 
 
 export default function Form ({ postItem }) {
@@ -10,13 +11,12 @@ export default function Form ({ postItem }) {
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [description, setDescription] = useState('');
-  const [uploadedFile, setUploadedFile] = useState({});
+  const [display, setDisplay] = useState(null);
 
   function submitHandler (e) {
     e.preventDefault();
     if (!name || !location || !description) return alert("Please fill in all the form befor send it")
     const image = img.name.split('.').slice(-1)[0];
-    console.log('image', image);
     postItem(name, location, description, image, img);
     setImg(null);
     ref.current.value = "";
@@ -32,10 +32,14 @@ export default function Form ({ postItem }) {
       setImg(null);
       e.target.value = null;
       return alert('Only .png, .jpg and .jpeg format allowed!');
-    } else {
-      setImg(file);
     }
-    console.log(file);
+    if (file) {
+      setImg(file);
+      const url = URL.createObjectURL(file);
+      setDisplay(url);
+    } else {
+      setImg(null);
+    }
   }
 
   function itemHandler (e) {
@@ -52,13 +56,24 @@ export default function Form ({ postItem }) {
 
   return (
     <div className='photo-upload' >
+      <h1 className='form-title'>Give Something Away!</h1>
       <form className='photo-form' onSubmit={submitHandler}>
         <div className='photo-input'>
-          <label>Select Image</label>
-          <input className='photo-select'
-            type='file' onChange={fileHandler} ref={ref}
-            id='image-uploads'
-          />
+          <div className='input-file-config'>
+            <input className='photo-select'
+              type='file' onChange={fileHandler} ref={ref}
+              name='image-upload'
+              id='input-img'
+              aria-label="File browser example"
+              style={{ display: 'none' }}
+            />
+            <div className='preview'>
+              {img && <img className='img-preview' src={display} />}
+            </div>
+          </div>
+          <div className='label-upload'>
+            <label htmlFor='input-img'>Select Image</label>
+          </div>
         </div>
         <div className='items-inputs'>
           <div className='photo-item'>
@@ -69,7 +84,7 @@ export default function Form ({ postItem }) {
             />
           </div>
           <div className='photo-location' >
-            <label>location</label>
+            <label>Location</label>
             <input className='photo-item-inputs' type='text' placeholder='e.g Charlottenburg - 10587'
               value={location}
               onChange={locationHandler}
@@ -83,9 +98,7 @@ export default function Form ({ postItem }) {
               onChange={descriptionHandler}
             />
           </div>
-
-          <button className='photo-submit' type='submit'>submit</button>
-
+          <button className='photo-submit' type='submit'>Submit</button>
         </div>
       </form>
     </div>

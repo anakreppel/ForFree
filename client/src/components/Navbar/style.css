@@ -40,6 +40,12 @@ h1{
   padding-right: 4px;
 }
 
+.search-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .nude{
   width: 73px;
   height: 50px;
@@ -79,4 +85,16 @@ h1{
   border: 1px solid #518FD8;
   color: #518FD8;
   transition: all 0.5s ease-in-out;
+}
+
+.input-search{
+  width: 650px;
+  height: 50px;
+  left: 297px;
+  top: 37px;
+  background: #FAFAFA;
+  border: 1px solid #518FD8;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 2%;
 }

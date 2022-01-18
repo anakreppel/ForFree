@@ -10,7 +10,7 @@ export default function Dashboard () {
   return (
     <div className='items-content'>
       <div className='item-list'>
-        {itemList.map((item, i) => <Item key={i} item={item} />)}
+        {itemList.map((item, i) => <Item className='dash-item' key={i} item={item} />)}
       </div>
     </div>
   )

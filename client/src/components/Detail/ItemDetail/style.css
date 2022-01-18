@@ -60,7 +60,10 @@
 .reply{
   width: 100%;
   height: 100px;
-  margin-bottom: 6%;
+  padding: 1%;
+  margin-bottom: 0.5%;
+  text-align:initial;
+  
 }
 .ask{
   width: 100%;
