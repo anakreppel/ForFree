@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css';
-import { Menu } from '../Navbar/MenuList';
+import { Menu } from '../../MenuList';
 
 
 

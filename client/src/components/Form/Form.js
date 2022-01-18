@@ -1,4 +1,6 @@
 import React from 'react';
+import { Menu } from '../../MenuList';
+import './style.css';
 import { useState } from 'react';
 
 
@@ -21,6 +23,7 @@ export default function Form ({ postItem }) {
     setName('');
     setLocation('');
     setDescription('');
+    return alert('New Item Submited!');
   }
 
   function fileHandler (e) {
@@ -28,7 +31,7 @@ export default function Form ({ postItem }) {
     if (file.type !== "image/png" && file.type !== "image/jpg" && file.type !== "image/jpeg") {
       setImg(null);
       e.target.value = null;
-      return alert('Only .png, .jpg and .jpeg format allowed!')
+      return alert('Only .png, .jpg and .jpeg format allowed!');
     } else {
       setImg(file);
     }
@@ -48,34 +51,42 @@ export default function Form ({ postItem }) {
   }
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <div>
-          <input type='file' onChange={fileHandler} ref={ref} />
-        </div>
-        <div>
-          <label>Item</label>
-          <input type='text' placeholder='Tell us what your item is'
-            value={name}
-            onChange={itemHandler}
+    <div className='photo-upload' >
+      <form className='photo-form' onSubmit={submitHandler}>
+        <div className='photo-input'>
+          <label>Select Image</label>
+          <input className='photo-select'
+            type='file' onChange={fileHandler} ref={ref}
+            id='image-uploads'
           />
         </div>
-        <div>
-          <label>location</label>
-          <input type='text' placeholder='e.g Charlottenburg - 10587'
-            value={location}
-            onChange={locationHandler}
-          />
+        <div className='items-inputs'>
+          <div className='photo-item'>
+            <label>Item</label>
+            <input className='photo-item-inputs' type='text' placeholder='Tell us what your item is'
+              value={name}
+              onChange={itemHandler}
+            />
+          </div>
+          <div className='photo-location' >
+            <label>location</label>
+            <input className='photo-item-inputs' type='text' placeholder='e.g Charlottenburg - 10587'
+              value={location}
+              onChange={locationHandler}
+            />
+          </div>
+          <div className='photo-description'>
+            <label>Description</label>
+            <input className='photo-item-inputs' type='text'
+              placeholder='Tell us more about your item, e.g. use condition, size, colour. '
+              value={description}
+              onChange={descriptionHandler}
+            />
+          </div>
+
+          <button className='photo-submit' type='submit'>submit</button>
+
         </div>
-        <div>
-          <label>Description</label>
-          <input type='text'
-            placeholder='Tell us more about your item, e.g. use condition, size, colour. '
-            value={description}
-            onChange={descriptionHandler}
-          />
-        </div>
-        <button type='submit'>submit</button>
       </form>
     </div>
   )
