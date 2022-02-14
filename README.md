@@ -1,8 +1,8 @@
 # ForFree
 
-ForFree is a project inspired by the Facebook group Free Your Staff Berlin and my personal desire to improve my interaction with the consumption of goods.
+ForFree is a project inspired by the Facebook group Free Your Staff Berlin and my personal desire to improve my relationship to the consumption of goods.
 
-I firmly believe that everyone can take the first step towards a more prepared society to consume consciously and responsibly. 
+I firmly believe that everyone can take the first step towards a more sustainable society, consuming consciously and responsibly. 
 
 Do we really need to always buy new things?
 
@@ -20,7 +20,7 @@ This project is just getting started. I present here the outline of an idea and 
 1. Clone this repository with the command and get into the main directory
    ```bash
    git clone https://github.com/anakreppel/ForFree
-   cd heaps
+   cd forFree
    ```
 2. Get into the server directory and install the dependencies
    ```bash
