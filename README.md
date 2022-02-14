@@ -9,6 +9,11 @@ Do we really need to always buy new things?
 I don't think so and I think we can make a difference together and move towards a society that uses natural resources better, consumes better and is more aware of the impact of consumption on the climate and the environment.
 
 This project is just getting started. I present here the outline of an idea and a desire to become a better and more useful person for society.
+## Screenshots
+
+<p align="center">
+  <img src="./screenShot.png" />
+</p>
 
 ## Getting Started
 
